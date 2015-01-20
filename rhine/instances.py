@@ -15,7 +15,7 @@ from .exceptions import *
 class RhineInstance:
   def __init__(self, apikey, ssl = False):
     self.apikey = apikey
-    self.url = 'https://api.rhine.io' if ssl else 'http://api.rhine.io/'
+    self.url = 'https://api.rhine.io/' if ssl else 'http://api.rhine.io/'
 
   def __str__(self):
     return 'RhineInstance<apikey:{0}>'.format(self.apikey)
@@ -34,7 +34,7 @@ class RhineInstance:
     return self._run(req)[name]
 
   def pipeline(self, reqs):
-    return [x[0][x[1]] for x in zip(self._run({'pipelined': reqs})['multiple'], [list(r.keys())[0] for r in reqs])]    
+    return [x[0][x[1]] for x in zip(self.run({'pipelined': reqs}), [list(r.keys())[0] for r in reqs])]    
 
 def instantiate(key, ssl = False):
   return RhineInstance(key, ssl)
