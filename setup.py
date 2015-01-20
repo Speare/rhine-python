@@ -3,8 +3,8 @@ from setuptools import setup
 setup (
   name = 'rhine',
   version = '1.0.0',
-  description = 'Rhine Python client',
-  long_description = open('README.md').read(),
+  description = 'Rhine Python Client',
+  long_description = 'For documentation, please see [http://www.rhine.io/docs].',
   url = 'https://github.com/Speare/rhine-python',
   license = 'New BSD',
   author = 'Speare Inc.',
